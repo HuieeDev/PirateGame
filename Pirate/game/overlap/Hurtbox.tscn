@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kn507g66b5lc"]
+
+[ext_resource type="Script" path="res://game/overlap/hurtbox.gd" id="1_bvwxu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8ydi"]
+radius = 40.0
+
+[node name="Hurtbox" type="Area2D"]
+script = ExtResource("1_bvwxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e8ydi")
+debug_color = Color(0.885014, 0.317973, 0.258857, 0.42)

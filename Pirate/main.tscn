@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://do2a2nrjfm5d0"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_dlucd"]
+[ext_resource type="Texture2D" uid="uid://d2eglpyhc6vqr" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_23.png" id="2_3hxte"]
+[ext_resource type="PackedScene" uid="uid://q1h23egywjj8" path="res://game/entities/units/ships/proto_ship.tscn" id="3_epjwi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_dlucd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(573.5, 314)
+scale = Vector2(18.9219, 10.8125)
+texture = ExtResource("2_3hxte")
+
+[node name="ProtoShip" parent="." instance=ExtResource("3_epjwi")]
+position = Vector2(304, 251)
+f_speed = 60.0
+t_speed = 45.0

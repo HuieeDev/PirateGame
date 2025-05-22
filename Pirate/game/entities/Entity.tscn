@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cglh8j4ald7l6"]
+
+[ext_resource type="Script" path="res://game/entities/entity.gd" id="1_g4dfh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jx0hf"]
+radius = 33.0151
+
+[node name="Entity" type="RigidBody2D"]
+script = ExtResource("1_g4dfh")
+
+[node name="Animation" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Animation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jx0hf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

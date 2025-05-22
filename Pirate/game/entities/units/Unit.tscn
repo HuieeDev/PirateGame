@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnadxofbg35vp"]
+
+[ext_resource type="PackedScene" uid="uid://cglh8j4ald7l6" path="res://game/entities/Entity.tscn" id="1_kcsih"]
+[ext_resource type="Script" path="res://game/entities/units/unit.gd" id="2_l4ljf"]
+[ext_resource type="PackedScene" uid="uid://kn507g66b5lc" path="res://game/overlap/Hurtbox.tscn" id="3_p8fh7"]
+
+[node name="Unit" instance=ExtResource("1_kcsih")]
+script = ExtResource("2_l4ljf")
+
+[node name="Hurtbox" parent="." index="3" instance=ExtResource("3_p8fh7")]
