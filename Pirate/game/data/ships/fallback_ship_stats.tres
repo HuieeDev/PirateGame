@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShipStats" load_steps=2 format=3 uid="uid://dpmwg2jkfryml"]
+
+[ext_resource type="Script" path="res://game/data/ships/ship_stats.gd" id="1_ja8wj"]
+
+[resource]
+script = ExtResource("1_ja8wj")
+forward_speed = 50.0
+turning_speed = 40.0
+max_health = 100
