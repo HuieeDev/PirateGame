@@ -14,5 +14,3 @@ texture = ExtResource("2_3hxte")
 
 [node name="ProtoShip" parent="." instance=ExtResource("3_epjwi")]
 position = Vector2(304, 251)
-f_speed = 60.0
-t_speed = 45.0
