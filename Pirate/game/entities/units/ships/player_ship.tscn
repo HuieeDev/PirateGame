@@ -1,11 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://2sm4qyqsvy17"]
+[gd_scene load_steps=6 format=3 uid="uid://2sm4qyqsvy17"]
 
 [ext_resource type="PackedScene" uid="uid://gqf07kflihym" path="res://game/entities/units/ships/ship.tscn" id="1_g3jui"]
 [ext_resource type="Script" path="res://game/entities/units/ships/player_ship.gd" id="2_0hl02"]
 [ext_resource type="Script" path="res://game/entities/units/movement_behaviours/player_ship_movement.gd" id="2_1xv67"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ucec4"]
+radius = 23.0
+height = 108.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k8ylk"]
+radius = 23.0
+height = 108.0
+
 [node name="PlayerShip" instance=ExtResource("1_g3jui")]
 script = ExtResource("2_0hl02")
 
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_ucec4")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CapsuleShape2D_k8ylk")
+
 [node name="MovementBehaviour" parent="." index="4"]
 script = ExtResource("2_1xv67")
+
+[editable path="Hurtbox"]
