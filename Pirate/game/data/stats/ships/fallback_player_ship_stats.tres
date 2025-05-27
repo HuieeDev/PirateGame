@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerShipStats" load_steps=2 format=3 uid="uid://05wfvnxmqp7j"]
+
+[ext_resource type="Script" path="res://game/data/stats/ships/player_ship_stats.gd" id="1_e5u58"]
+
+[resource]
+script = ExtResource("1_e5u58")
+pickup_range = 100
+forward_speed = 50.0
+turning_speed = 40.0
+health = 10

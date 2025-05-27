@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://2sm4qyqsvy17"]
+[gd_scene load_steps=7 format=3 uid="uid://2sm4qyqsvy17"]
 
 [ext_resource type="PackedScene" uid="uid://gqf07kflihym" path="res://game/entities/units/ships/ship.tscn" id="1_g3jui"]
 [ext_resource type="Script" path="res://game/entities/units/ships/player_ship.gd" id="2_0hl02"]
@@ -12,6 +12,9 @@ height = 108.0
 radius = 23.0
 height = 108.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pec51"]
+radius = 100.0
+
 [node name="PlayerShip" instance=ExtResource("1_g3jui")]
 script = ExtResource("2_0hl02")
 
@@ -23,5 +26,16 @@ shape = SubResource("CapsuleShape2D_k8ylk")
 
 [node name="MovementBehaviour" parent="." index="4"]
 script = ExtResource("2_1xv67")
+
+[node name="PickupRadius" type="Area2D" parent="." index="6"]
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius" index="0"]
+shape = SubResource("CircleShape2D_pec51")
+debug_color = Color(0.512508, 0.572442, 0.212313, 0.42)
+
+[connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]
+[connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]
 
 [editable path="Hurtbox"]
