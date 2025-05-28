@@ -1,7 +1,8 @@
 extends CharacterBody2D
-
+# this is just for testing movement 
+# the actual game ship is player_ship
 @onready var forwardNode : Node2D = $Forward
-@export var ship_stats : ShipStats = preload("res://game/data/ships/fallback_ship_stats.tres")
+@export var ship_stats : ShipStats = preload("res://game/data/stats/ships/fallback_player_ship_stats.tres")
 
 func _process(delta: float) -> void:
 	var move_direction = (forwardNode.global_position - global_position).normalized()
