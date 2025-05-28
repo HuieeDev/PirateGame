@@ -4,4 +4,13 @@ extends Node
 
 #enums go here
 
+enum ItemCategory
+{
+	ITEM, SHIP_UPGRADE, WEAPON, ENEMY, PLAYER, COLLECTABLE
+}
+
+enum ShipWeaponTypes
+{
+	CANNON, PROW, FOLLOWER, MISC
+}
 #funcs

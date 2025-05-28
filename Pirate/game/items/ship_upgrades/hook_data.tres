@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ShipUpgradeData" load_steps=5 format=3 uid="uid://b1dkc5uprcjq1"]
+
+[ext_resource type="Script" path="res://game/items/effect.gd" id="1_osmkm"]
+[ext_resource type="Script" path="res://game/items/ship_upgrades/ship_upgrade_data.gd" id="1_raka1"]
+
+[sub_resource type="Resource" id="Resource_mi17v"]
+script = ExtResource("1_osmkm")
+key = "crit_chance"
+text_key = "Crit Chance"
+value = 0
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = []
+
+[sub_resource type="Resource" id="Resource_slgw6"]
+script = ExtResource("1_osmkm")
+key = "turn_speed"
+text_key = "Turn Speed"
+value = -10
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = []
+
+[resource]
+script = ExtResource("1_raka1")
+max_number = -1
+my_id = "hook"
+name = "Hook"
+unlocked_by_default = true
+tier = 0
+value = 1
+effects = Array[Resource]([SubResource("Resource_mi17v"), SubResource("Resource_slgw6")])
