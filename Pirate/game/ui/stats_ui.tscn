@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwkdfshm5qama"]
+
+[ext_resource type="Script" path="res://game/ui/stats_ui.gd" id="1_6mgll"]
+[ext_resource type="PackedScene" uid="uid://b6ym7222uqqcm" path="res://game/ui/stat_display.tscn" id="1_x73ga"]
+
+[node name="StatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 915.0
+offset_top = 57.0
+offset_right = 1116.0
+offset_bottom = 616.0
+script = ExtResource("1_6mgll")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsDisplayContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 9.0
+offset_right = -10.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
+layout_mode = 2
+_stat_to_display = "max_hp"
+
+[node name="StatValue" parent="StatsDisplayContainer/Health/HBoxContainer" index="1"]
+text = "8"
+
+[editable path="StatsDisplayContainer/Health"]

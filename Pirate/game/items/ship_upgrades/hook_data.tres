@@ -31,4 +31,4 @@ name = "Hook"
 unlocked_by_default = true
 tier = 0
 value = 1
-effects = Array[Resource]([SubResource("Resource_mi17v"), SubResource("Resource_slgw6")])
+effects = Array[ExtResource("1_osmkm")]([SubResource("Resource_mi17v"), SubResource("Resource_slgw6")])

@@ -10,7 +10,11 @@ script = ExtResource("2_x7mbh")
 stats = ExtResource("3_00585")
 
 [node name="Sprite2D" parent="Animation" index="0"]
+unique_name_in_owner = false
 texture = ExtResource("4_eux3o")
+
+[node name="CollisionShape2D" parent="." index="1"]
+unique_name_in_owner = false
 
 [node name="Forward" type="Marker2D" parent="." index="5"]
 position = Vector2(0, 56)

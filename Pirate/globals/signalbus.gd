@@ -1,8 +1,8 @@
 extends Node
+
 # This holds all global Signals
 
-signal PlayerSpawed
-
+signal PlayerSpawned(player)
 
 # Player stats change
 signal PlayerShipPickupRadiusChanged(new_radius)

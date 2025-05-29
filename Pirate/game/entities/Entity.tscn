@@ -11,8 +11,10 @@ script = ExtResource("1_g4dfh")
 [node name="Animation" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Animation"]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_jx0hf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
