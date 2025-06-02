@@ -3,10 +3,22 @@ class_name StatDisplay
 
 @export var _stat_to_display : String
 
-@onready var name_label := $HBoxContainer/StatName
-@onready var value_label := $HBoxContainer/StatValue
+@onready var _name_label := $HBoxContainer/StatName
+@onready var _value_label := $HBoxContainer/StatValue
 
 func display_stat() -> void:
+	_name_label.text = _stat_to_display
+	
 	var stat_value = RunData.get_stat(_stat_to_display.to_lower())
 	var value_text = str(stat_value as int)
-	value_label.text = value_text
+	_value_label.text = value_text
+	
+	if stat_value > 0:
+		_name_label.modulate = Refs.positive_col
+		_value_label.modulate = Refs.positive_col
+	elif stat_value < 0:
+		_name_label.modulate = Refs.negative_col
+		_value_label.modulate = Refs.negative_col
+	else:
+		_name_label.modulate = Refs.neutral_col
+		_value_label.modulate = Refs.neutral_col

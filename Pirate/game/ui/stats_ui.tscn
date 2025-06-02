@@ -37,7 +37,14 @@ grow_vertical = 2
 layout_mode = 2
 _stat_to_display = "max_hp"
 
-[node name="StatValue" parent="StatsDisplayContainer/Health/HBoxContainer" index="1"]
-text = "8"
+[node name="ForwardSpeed" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
+layout_mode = 2
+_stat_to_display = "forward_speed"
 
-[editable path="StatsDisplayContainer/Health"]
+[node name="TurningSpeed" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
+layout_mode = 2
+_stat_to_display = "turning_speed"
+
+[node name="PickupRange" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
+layout_mode = 2
+_stat_to_display = "pickup_range"
