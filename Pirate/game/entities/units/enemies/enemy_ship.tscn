@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da4mhcy2eja0c"]
+
+[ext_resource type="PackedScene" uid="uid://d14brk8cbecer" path="res://game/entities/units/enemies/enemy.tscn" id="1_l5smu"]
+[ext_resource type="Script" path="res://game/entities/units/enemies/enemy_ship.gd" id="2_6adwp"]
+
+[node name="EnemyShip" instance=ExtResource("1_l5smu")]
+script = ExtResource("2_6adwp")
+
+[node name="Forward" type="Marker2D" parent="." index="5"]
+position = Vector2(0, 54)

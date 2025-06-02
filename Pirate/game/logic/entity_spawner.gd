@@ -13,6 +13,7 @@ func on_level_start():
 func _spawn_player() -> void:
 	var player = _spawn_entity(_player_ship_scene, _player_spawn_pos.global_position, true)
 	player_spawned.emit(player)
+	Global.player = player
 	
 func _spawn_entity(scene : PackedScene, pos : Vector2, is_player : bool = false, data : Resource = null) -> RigidBody2D:
 	var entity : Entity = scene.instantiate()

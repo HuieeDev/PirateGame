@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://do2a2nrjfm5d0"]
+[gd_scene load_steps=9 format=3 uid="uid://do2a2nrjfm5d0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dlucd"]
 [ext_resource type="Texture2D" uid="uid://bbg0f2wxae50p" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_73.png" id="2_l4kwf"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://game/logic/entity_spawner.gd" id="4_fsxmt"]
 [ext_resource type="Script" path="res://game/ui/level_ui.gd" id="4_idoba"]
 [ext_resource type="PackedScene" uid="uid://bwkdfshm5qama" path="res://game/ui/stats_ui.tscn" id="4_vsvwl"]
+[ext_resource type="PackedScene" uid="uid://o0smlopq3fwf" path="res://game/entities/units/enemies/pirate_ship/pirate_ship.tscn" id="7_pkssj"]
+[ext_resource type="Resource" uid="uid://bpmyc52limxk8" path="res://game/entities/units/enemies/pirate_ship/pirate_ship_stats.tres" id="8_tcfp5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dlucd")
@@ -31,3 +33,7 @@ script = ExtResource("4_idoba")
 
 [node name="Stats" parent="UI" instance=ExtResource("4_vsvwl")]
 unique_name_in_owner = true
+
+[node name="PirateShip" parent="." instance=ExtResource("7_pkssj")]
+position = Vector2(853, 255)
+stats = ExtResource("8_tcfp5")
