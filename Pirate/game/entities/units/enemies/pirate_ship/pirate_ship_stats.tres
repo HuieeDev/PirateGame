@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ShipStats" load_steps=2 format=3 uid="uid://bpmyc52limxk8"]
+
+[ext_resource type="Script" path="res://game/data/stats/ships/ship_stats.gd" id="1_pqynp"]
+
+[resource]
+script = ExtResource("1_pqynp")
+forward_speed = 50.0
+turning_speed = 40.0
+health = 1

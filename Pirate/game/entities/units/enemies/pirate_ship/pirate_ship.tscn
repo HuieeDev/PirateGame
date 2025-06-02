@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://o0smlopq3fwf"]
+
+[ext_resource type="PackedScene" uid="uid://da4mhcy2eja0c" path="res://game/entities/units/enemies/enemy_ship.tscn" id="1_t4204"]
+[ext_resource type="Script" path="res://game/entities/units/enemies/pirate_ship/pirate_ship.gd" id="2_m6kx7"]
+[ext_resource type="Texture2D" uid="uid://dbgrtpo7iuv24" path="res://assets/Kenney_Pirates/PNG/Default size/Ships/ship (8).png" id="2_w0l1x"]
+[ext_resource type="Script" path="res://game/entities/units/movement_behaviours/follow_player.gd" id="3_jsu4v"]
+[ext_resource type="Resource" uid="uid://bpmyc52limxk8" path="res://game/entities/units/enemies/pirate_ship/pirate_ship_stats.tres" id="4_ca7iv"]
+
+[node name="EnemyShip" instance=ExtResource("1_t4204")]
+script = ExtResource("2_m6kx7")
+
+[node name="Sprite2D" parent="Animation" index="0"]
+texture = ExtResource("2_w0l1x")
+
+[node name="MovementBehaviour" parent="." index="4"]
+script = ExtResource("3_jsu4v")
+shipstats = ExtResource("4_ca7iv")

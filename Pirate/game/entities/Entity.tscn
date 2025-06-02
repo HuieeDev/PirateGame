@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game/entities/entity.gd" id="1_g4dfh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jx0hf"]
-radius = 33.0151
+radius = 37.4833
 
 [node name="Entity" type="RigidBody2D"]
 script = ExtResource("1_g4dfh")
