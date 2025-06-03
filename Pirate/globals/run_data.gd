@@ -36,11 +36,11 @@ var is_testing = false
 func _ready() -> void:
 	#want to add in ship here
 	_init_stats_to_default()
-	pass
 	
 func reset(restart:bool = false) -> void:
 	weapons = []
 	items = []
+	gold = 0
 
 # TODO: create character, ship and weapon stat resources. Pass through as params
 func add_character() -> void:

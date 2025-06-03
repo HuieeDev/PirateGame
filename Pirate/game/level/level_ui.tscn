@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://5t85ngto8mi"]
+[gd_scene load_steps=3 format=3 uid="uid://5t85ngto8mi"]
 
+[ext_resource type="Script" path="res://game/level/level_ui.gd" id="1_17lnn"]
 [ext_resource type="Script" path="res://game/level/timer_ui.gd" id="1_jerpj"]
 
 [node name="LevelUI" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_17lnn")
 
 [node name="Timer" type="Label" parent="."]
 layout_mode = 0

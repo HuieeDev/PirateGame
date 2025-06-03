@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 @onready var entity_spawner := %EntitySpawner
 
@@ -10,7 +11,14 @@ extends Node2D
 func start() -> void:
 	entity_spawner.on_level_start()
 	timer.start_timer(level_duration)
+	SignalBus.level_start.emit()
 
 
 func _on_level_timer_timeout() -> void:
 	SignalBus.level_timeout.emit()
+
+
+func clean_up() -> void:
+	entity_spawner.clean_up()
+	# TODO: only do this once everything is cleaned up and freed
+	SignalBus.level_end.emit()

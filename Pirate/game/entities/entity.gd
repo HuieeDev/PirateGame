@@ -34,3 +34,4 @@ func set_data(data : Resource):
 func die():
 	dead = true
 	died.emit(self)
+	queue_free()

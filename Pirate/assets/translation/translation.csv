@@ -3,3 +3,5 @@ max_hp,Max HP
 forward_speed,Forward Speed
 turning_speed,Turning Speed
 pickup_range,Pickup Range
+tavern,Tavern
+set_sail,Set Sail

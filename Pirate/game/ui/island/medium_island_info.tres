@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IslandInfo" load_steps=2 format=3 uid="uid://ncot23rwunlu"]
+
+[ext_resource type="Script" path="res://game/ui/island/island_info.gd" id="1_ccom4"]
+
+[resource]
+script = ExtResource("1_ccom4")
+size = 1
+island_textures = Array[Texture2D]([])
+min_num_interactions = 2
+max_num_interactions = 4

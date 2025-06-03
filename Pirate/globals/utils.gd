@@ -13,4 +13,6 @@ enum ShipWeaponTypes
 {
 	CANNON, PROW, FOLLOWER, MISC
 }
+
+
 #funcs
