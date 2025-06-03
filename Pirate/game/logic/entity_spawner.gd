@@ -40,8 +40,19 @@ func clean_up() -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
-	var spawn_pos = Vector2(-100, -100)
-	var enemy = _spawn_entity(_enemy_scene, spawn_pos)
+	_spawn_enemy_offscreen(_enemy_scene)
+
+var SPAWN_RANGE = 100
+func _spawn_enemy_offscreen(enemy_scene: PackedScene) -> void:
+	var player_pos = Global.player.global_position
+	var screen_bounds = get_viewport_rect().size
+	var screen_edges = Vector2(player_pos.x + screen_bounds.x/2, player_pos.y + screen_bounds.y/2)
+	
+	var x_pos = randf_range(screen_edges.x + 50, screen_edges.x + SPAWN_RANGE) * (randi() % 2 * 2 - 1)
+	var y_pos = randf_range(screen_edges.y + 50, screen_edges.y + SPAWN_RANGE) * (randi() % 2 * 2 - 1)
+	var spawn_pos = Vector2(x_pos, y_pos)
+	
+	var enemy = _spawn_entity(enemy_scene, spawn_pos)
 	enemy_spawned.emit(enemy)
 	enemies.append(enemy)
 
