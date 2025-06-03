@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dek52psod7q8n"]
+
+[ext_resource type="Script" path="res://game/logic/level.gd" id="1_spcl1"]
+[ext_resource type="Texture2D" uid="uid://bbg0f2wxae50p" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_73.png" id="2_nm35v"]
+[ext_resource type="Script" path="res://game/logic/entity_spawner.gd" id="3_2amm4"]
+[ext_resource type="Script" path="res://game/level/level_timer.gd" id="4_rt8aj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_spcl1")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(573.5, 314)
+scale = Vector2(18.9219, 10.8125)
+texture = ExtResource("2_nm35v")
+
+[node name="EntitySpawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_2amm4")
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(415, 249)
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+script = ExtResource("4_rt8aj")
+
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

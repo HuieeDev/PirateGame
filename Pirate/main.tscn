@@ -1,38 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://do2a2nrjfm5d0"]
+[gd_scene load_steps=8 format=3 uid="uid://do2a2nrjfm5d0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dlucd"]
-[ext_resource type="Texture2D" uid="uid://bbg0f2wxae50p" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_73.png" id="2_l4kwf"]
-[ext_resource type="Script" path="res://game/logic/level.gd" id="2_s3ovl"]
-[ext_resource type="Script" path="res://game/logic/entity_spawner.gd" id="4_fsxmt"]
+[ext_resource type="PackedScene" uid="uid://dek52psod7q8n" path="res://game/level/level.tscn" id="2_04e01"]
 [ext_resource type="Script" path="res://game/ui/level_ui.gd" id="4_idoba"]
 [ext_resource type="PackedScene" uid="uid://bwkdfshm5qama" path="res://game/ui/stats_ui.tscn" id="4_vsvwl"]
+[ext_resource type="PackedScene" uid="uid://5t85ngto8mi" path="res://game/level/level_ui.tscn" id="5_siq5f"]
 [ext_resource type="PackedScene" uid="uid://o0smlopq3fwf" path="res://game/entities/units/enemies/pirate_ship/pirate_ship.tscn" id="7_pkssj"]
 [ext_resource type="Resource" uid="uid://bpmyc52limxk8" path="res://game/entities/units/enemies/pirate_ship/pirate_ship_stats.tres" id="8_tcfp5"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dlucd")
 
-[node name="Level" type="Node2D" parent="."]
-script = ExtResource("2_s3ovl")
-
-[node name="Background" type="Sprite2D" parent="Level"]
-position = Vector2(573.5, 314)
-scale = Vector2(18.9219, 10.8125)
-texture = ExtResource("2_l4kwf")
-
-[node name="EntitySpawner" type="Node2D" parent="Level"]
-unique_name_in_owner = true
-script = ExtResource("4_fsxmt")
-
-[node name="PlayerSpawnPos" type="Marker2D" parent="Level"]
-unique_name_in_owner = true
-position = Vector2(415, 249)
+[node name="Level" parent="." instance=ExtResource("2_04e01")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("4_idoba")
 
 [node name="Stats" parent="UI" instance=ExtResource("4_vsvwl")]
 unique_name_in_owner = true
+
+[node name="LevelUI" parent="UI" instance=ExtResource("5_siq5f")]
 
 [node name="PirateShip" parent="." instance=ExtResource("7_pkssj")]
 position = Vector2(853, 255)
