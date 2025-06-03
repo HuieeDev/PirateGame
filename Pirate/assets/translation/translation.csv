@@ -1,3 +1,5 @@
-KEYS,en,de
-max_hp,Max HP,Maximum Gesundheit
-forward_speed,Forward Speed,Blah
+KEYS,en
+max_hp,Max HP
+forward_speed,Forward Speed
+turning_speed,Turning Speed
+pickup_range,Pickup Range
