@@ -6,8 +6,8 @@ func _ready() -> void:
 func update_ui(time:int):
 	var seconds := time
 	var minutes := seconds / 60
+	# if its < a minute left then just show seconds. Could change this
 	if minutes > 0:
 		set_text("%2d:%02d" % [minutes%60, seconds%60])
 	else:
 		set_text("%02d" % [seconds%60])
-		
