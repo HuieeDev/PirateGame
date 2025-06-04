@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ek16e4lm4un"]
+
+[ext_resource type="Script" path="res://game/ui/map/map.gd" id="1_j1t28"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1t28")
+
+[node name="Islands" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TestIsland" type="ColorRect" parent="Islands"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 429.0
+offset_right = 626.0
+offset_bottom = 549.0
+pivot_offset = Vector2(60, 0)
+
+[node name="TestIsland2" type="ColorRect" parent="Islands"]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 93.0
+offset_right = 855.0
+offset_bottom = 213.0
+pivot_offset = Vector2(60, 120)
+
+[node name="TestIsland3" type="ColorRect" parent="Islands"]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 114.0
+offset_right = 411.0
+offset_bottom = 234.0
+pivot_offset = Vector2(60, 120)
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(559, 431, 792, 210)
+default_color = Color(0.710342, 0.106139, 0.0934437, 1)
+round_precision = 13
+
+[connection signal="mouse_entered" from="Islands/TestIsland2" to="." method="_on_test_island_2_mouse_entered"]
