@@ -16,7 +16,7 @@ height = 108.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_pec51"]
 radius = 100.0
 
-[node name="PlayerShip" instance=ExtResource("1_g3jui")]
+[node name="PlayerShip" groups=["player"] instance=ExtResource("1_g3jui")]
 script = ExtResource("2_0hl02")
 
 [node name="CollisionShape2D" parent="." index="1"]

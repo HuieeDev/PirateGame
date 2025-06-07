@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://do2a2nrjfm5d0"]
+[gd_scene load_steps=9 format=3 uid="uid://do2a2nrjfm5d0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dlucd"]
 [ext_resource type="PackedScene" uid="uid://dek52psod7q8n" path="res://game/level/level.tscn" id="2_04e01"]
+[ext_resource type="PackedScene" uid="uid://ec8fhydwr8i7" path="res://game/Game_Camera/game_camera.tscn" id="2_8fncu"]
 [ext_resource type="Script" path="res://game/ui/level_ui.gd" id="4_idoba"]
 [ext_resource type="PackedScene" uid="uid://bwkdfshm5qama" path="res://game/ui/stats_ui.tscn" id="4_vsvwl"]
 [ext_resource type="PackedScene" uid="uid://5t85ngto8mi" path="res://game/level/level_ui.tscn" id="5_siq5f"]
@@ -10,6 +11,8 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dlucd")
+
+[node name="GameCamera" parent="." instance=ExtResource("2_8fncu")]
 
 [node name="Level" parent="." instance=ExtResource("2_04e01")]
 
