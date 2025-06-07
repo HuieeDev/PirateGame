@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d31wys4hrgnr5"]
+
+[ext_resource type="PackedScene" uid="uid://cojkodm0sd0ig" path="res://game/items/Collectables/Collectables.tscn" id="1_41n0v"]
+[ext_resource type="Texture2D" uid="uid://biqe15pdmqxx5" path="res://assets/Collectables/GoldNotGold.png" id="2_jafb8"]
+
+[node name="Item" instance=ExtResource("1_41n0v")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_jafb8")
