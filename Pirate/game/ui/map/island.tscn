@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://jnu5btvf81ty"]
+
+[ext_resource type="Texture2D" uid="uid://cmq586wlmdn81" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_24.png" id="1_640ak"]
+[ext_resource type="Script" path="res://game/ui/map/island.gd" id="2_oaauv"]
+
+[node name="Island" type="TextureButton"]
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("1_640ak")
+script = ExtResource("2_oaauv")
+
+[node name="EnterPoint" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 62.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitPoint" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2

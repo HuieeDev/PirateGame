@@ -14,3 +14,6 @@ signal level_end
 
 signal enter_island
 signal exit_island
+
+signal enter_map
+signal exit_map

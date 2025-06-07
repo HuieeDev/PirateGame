@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://1ek16e4lm4un"]
+[gd_scene load_steps=3 format=3 uid="uid://1ek16e4lm4un"]
 
 [ext_resource type="Script" path="res://game/ui/map/map.gd" id="1_j1t28"]
+[ext_resource type="PackedScene" uid="uid://jnu5btvf81ty" path="res://game/ui/map/island.tscn" id="2_oa0mb"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -19,29 +20,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TestIsland" type="ColorRect" parent="Islands"]
+[node name="Island" parent="Islands" instance=ExtResource("2_oa0mb")]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 429.0
-offset_right = 626.0
-offset_bottom = 549.0
-pivot_offset = Vector2(60, 0)
+offset_left = 577.0
+offset_top = 449.0
+offset_right = 641.0
+offset_bottom = 513.0
 
-[node name="TestIsland2" type="ColorRect" parent="Islands"]
+[node name="Island2" parent="Islands" instance=ExtResource("2_oa0mb")]
 layout_mode = 0
-offset_left = 735.0
-offset_top = 93.0
-offset_right = 855.0
-offset_bottom = 213.0
-pivot_offset = Vector2(60, 120)
+offset_left = 799.0
+offset_top = 203.0
+offset_right = 863.0
+offset_bottom = 267.0
 
-[node name="TestIsland3" type="ColorRect" parent="Islands"]
+[node name="Island3" parent="Islands" instance=ExtResource("2_oa0mb")]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 114.0
-offset_right = 411.0
-offset_bottom = 234.0
-pivot_offset = Vector2(60, 120)
+offset_left = 452.0
+offset_top = 203.0
+offset_right = 516.0
+offset_bottom = 267.0
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
@@ -49,4 +47,14 @@ points = PackedVector2Array(559, 431, 792, 210)
 default_color = Color(0.710342, 0.106139, 0.0934437, 1)
 round_precision = 13
 
-[connection signal="mouse_entered" from="Islands/TestIsland2" to="." method="_on_test_island_2_mouse_entered"]
+[node name="SetSail" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 577.0
+offset_right = 1136.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 23
+text = "set_sail"
+
+[connection signal="button_down" from="SetSail" to="." method="_on_set_sail_button_down"]

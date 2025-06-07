@@ -11,10 +11,13 @@ func _ready() -> void:
 	SignalBus.level_timeout.connect(_on_level_timer_timeout)
 	SignalBus.level_end.connect(_on_level_end)
 	SignalBus.exit_island.connect(_on_exit_island)
+	SignalBus.exit_map.connect(_on_exit_map)
 
 func _on_exit_island() -> void:
-	_level.start()
+	SignalBus.enter_map.emit()
 
+func _on_exit_map() -> void:
+	_level.start()
 
 func _on_level_timer_timeout() -> void:
 	# need to check the passed through bools #1 and #3 from RunData
