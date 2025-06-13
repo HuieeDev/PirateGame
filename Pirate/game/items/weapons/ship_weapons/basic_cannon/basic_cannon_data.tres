@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ShipWeaponData" load_steps=3 format=3 uid="uid://bkyxatp0xfcct"]
 
-[ext_resource type="Script" path="res://game/items/ship_weapons/ship_weapon_data.gd" id="1_38mkw"]
-[ext_resource type="Resource" uid="uid://4weev6ih41p0" path="res://game/items/ship_weapons/basic_cannon/basic_cannon_stats.tres" id="2_5neov"]
+[ext_resource type="Script" path="res://game/items/weapons/ship_weapons/ship_weapon_data.gd" id="1_38mkw"]
+[ext_resource type="Resource" uid="uid://4weev6ih41p0" path="res://game/items/weapons/ship_weapons/basic_cannon/basic_cannon_stats.tres" id="2_5neov"]
 
 [resource]
 script = ExtResource("1_38mkw")
