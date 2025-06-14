@@ -6,6 +6,8 @@ signal on_something_killed(thing_killed)
 
 
 var damage := 1
+var ignored_objects := []
+var from = null
 
 @onready var _collision_shape := $CollisionShape2D
 

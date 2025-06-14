@@ -31,9 +31,13 @@ func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null
 	
 	init_current_stats()
 	
-	_weapons_container.init(_starting_weapons)
+	_setup_weapons()
 	
 	super(zone_min_pos, zone_max_pos)
+
+
+func _setup_weapons() -> void:
+	_weapons_container.init(_starting_weapons, self)
 
 
 # TODO: remove this once entity spawning is done correctly

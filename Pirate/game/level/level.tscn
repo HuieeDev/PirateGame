@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dek52psod7q8n"]
+[gd_scene load_steps=6 format=3 uid="uid://dek52psod7q8n"]
 
 [ext_resource type="Script" path="res://game/logic/level.gd" id="1_spcl1"]
 [ext_resource type="Texture2D" uid="uid://bbg0f2wxae50p" path="res://assets/Kenney_Pirates/PNG/Default size/Tiles/tile_73.png" id="2_nm35v"]
 [ext_resource type="Script" path="res://game/logic/entity_spawner.gd" id="3_2amm4"]
 [ext_resource type="Script" path="res://game/level/level_timer.gd" id="4_rt8aj"]
+[ext_resource type="Script" path="res://game/level/projectile_manager.gd" id="5_ykfbm"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_spcl1")
@@ -27,5 +28,8 @@ position = Vector2(415, 249)
 wait_time = 120.0
 one_shot = true
 script = ExtResource("4_rt8aj")
+
+[node name="ProjectileManager" type="Node2D" parent="."]
+script = ExtResource("5_ykfbm")
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

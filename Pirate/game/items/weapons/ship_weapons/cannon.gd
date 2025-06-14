@@ -1,12 +1,11 @@
 extends Weapon
 class_name Cannon
 
-@export var _projectile_scene : PackedScene
+signal projectile_shot(projectile : Projectile)
+
 
 @onready var _firing_point := %FiringPoint
 
 func _on_attack() -> void:
-	if _projectile_scene:
-		#spawn projectile
-		# probably want some global projectile manager as we'll have a load of them
-		pass
+	var projectile = Global.projectile_manager.spawn_projectile(_parent.rotation + rotation, _stats, _firing_point.global_position, self)
+	projectile_shot.emit(projectile)

@@ -70,5 +70,10 @@ func _spawn_entity(scene : PackedScene, pos : Vector2, is_player : bool = false,
 	if data:
 		entity.set_data(data)
 	
+	entity.ready.connect(_on_entity_ready.bind(entity))
+	
 	_entities_container.add_child(entity)
 	return entity
+
+func _on_entity_ready(entity) -> void:
+	entity.init(Vector2(0,0), Vector2(0,0))

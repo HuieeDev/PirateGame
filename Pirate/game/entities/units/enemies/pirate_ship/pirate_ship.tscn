@@ -8,6 +8,8 @@
 
 [node name="EnemyShip" instance=ExtResource("1_t4204")]
 script = ExtResource("2_m6kx7")
+gold_to_drop = null
+stats = ExtResource("4_ca7iv")
 
 [node name="Sprite2D" parent="Animation" index="0"]
 texture = ExtResource("2_w0l1x")
