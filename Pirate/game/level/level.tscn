@@ -9,8 +9,8 @@
 script = ExtResource("1_spcl1")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(573.5, 314)
-scale = Vector2(18.9219, 10.8125)
+position = Vector2(1189, 625)
+scale = Vector2(92.923, 50)
 texture = ExtResource("2_nm35v")
 
 [node name="EntitySpawner" type="Node2D" parent="."]

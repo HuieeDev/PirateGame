@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1ek16e4lm4un"]
+[gd_scene load_steps=4 format=3 uid="uid://1ek16e4lm4un"]
 
 [ext_resource type="Script" path="res://game/ui/map/map.gd" id="1_j1t28"]
 [ext_resource type="PackedScene" uid="uid://jnu5btvf81ty" path="res://game/ui/map/island.tscn" id="2_oa0mb"]
+[ext_resource type="Texture2D" uid="uid://c5e3xuepl86t6" path="res://game/ui/map/Map.jpg" id="2_rbcwx"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -11,6 +12,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j1t28")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rbcwx")
+expand_mode = 1
 
 [node name="Islands" type="Control" parent="."]
 layout_mode = 1
