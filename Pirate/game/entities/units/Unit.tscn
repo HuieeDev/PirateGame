@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnadxofbg35vp"]
+[gd_scene load_steps=8 format=3 uid="uid://cnadxofbg35vp"]
 
 [ext_resource type="PackedScene" uid="uid://cglh8j4ald7l6" path="res://game/entities/Entity.tscn" id="1_kcsih"]
 [ext_resource type="Script" path="res://game/entities/units/unit.gd" id="2_l4ljf"]
+[ext_resource type="Resource" uid="uid://d2uabp1htgtlt" path="res://game/data/stats/fallback_unit_stats.tres" id="3_fetta"]
 [ext_resource type="PackedScene" uid="uid://kn507g66b5lc" path="res://game/overlap/Hurtbox.tscn" id="3_p8fh7"]
 [ext_resource type="Script" path="res://game/entities/units/movement_behaviours/movement_behaviour.gd" id="4_l5nnw"]
+[ext_resource type="Script" path="res://game/items/weapons/ship_weapons/ship_weapon_data.gd" id="4_maedd"]
 [ext_resource type="Script" path="res://game/entities/units/unit_weapon_container.gd" id="6_brmyx"]
 
 [node name="Unit" instance=ExtResource("1_kcsih")]
 script = ExtResource("2_l4ljf")
-stats = null
-_starting_weapons = null
+stats = ExtResource("3_fetta")
+_starting_weapons = Array[ExtResource("4_maedd")]([])
 
 [node name="Hurtbox" parent="." index="3" instance=ExtResource("3_p8fh7")]
 

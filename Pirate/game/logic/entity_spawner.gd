@@ -32,7 +32,9 @@ func on_level_start():
 
 func clean_up() -> void:
 	for enemy in enemies:
-		enemy.die()
+		# TODO: entities should notify the spawner they are dead
+		if enemy:
+			enemy.die()
 	
 	Global.player.queue_free()
 	Global.player._can_move = false

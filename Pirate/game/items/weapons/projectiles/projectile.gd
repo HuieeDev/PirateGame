@@ -20,6 +20,8 @@ var _recycled := false
 @onready var _sprite := $Sprite2D
 @onready var _destroy_timer := $DestroyTimer
 
+func _ready() -> void:
+	_hitbox.on_something_hit.connect(_on_hitbox_hit_something)
 
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
@@ -40,9 +42,16 @@ func set_damage(dmg : int, crit_chance := 0.0, crit_damage := 0.0) -> void:
 	_hitbox.set_damage(dmg)
 
 
-func _on_hit(other) -> void:
-	if other is Unit:
-		other.take_damage(_hitbox.damage)
+func _on_hitbox_hit_something(thing_hit : Node, damage : int) -> void:
+	_hitbox.ignored_objects = [thing_hit]
+	
+	if weapon_stats.piercing <= 0:
+		set_to_be_destroyed()
+	else:
+		weapon_stats.piercing -= 1
+		if _hitbox.damage > 0:
+			# TODO: proper reduction in damage for each pierce here
+			_hitbox.damage = max(1, _hitbox.damage / 2)
 
 
 func _on_destroy_timer_timeout() -> void:

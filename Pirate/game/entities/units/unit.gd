@@ -9,6 +9,8 @@ signal took_damage(unit, value)
 var _current_stats : LiveUnitStats = LiveUnitStats.new()
 var _starting_stats : LiveUnitStats = LiveUnitStats.new()
 
+@onready var _hurtbox := $Hurtbox
+
 var _current_movement_behaviour : MovementBehaviour
 @onready var movement_behaviour : MovementBehaviour = $MovementBehaviour
 
@@ -23,6 +25,7 @@ var _can_attack : bool = true
 
 var _player_ref : Node2D
 
+
 func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null, _entity_spawner_ref = null) -> void:
 	
 	_current_movement_behaviour = movement_behaviour
@@ -33,16 +36,30 @@ func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null
 	
 	_setup_weapons()
 	
+	_hurtbox.area_entered.connect(_on_hurtbox_entered)
+	
 	super(zone_min_pos, zone_max_pos)
+
+
+
+func _on_hurtbox_entered(hitbox : Area2D) -> void:
+	if not hitbox is Hitbox or hitbox.ignored_objects.has(self): return
+	
+	hitbox = hitbox as Hitbox
+	
+	var dmg = hitbox.damage
+	var dmg_taken = [0,0]
+	
+	dmg_taken = take_damage(dmg, hitbox)
+	#do projectile burning, make new projectiles etc logic here
+	
+	on_hurt()
+	
+	hitbox.hit_something(self, dmg_taken[1])
 
 
 func _setup_weapons() -> void:
 	_weapons_container.init(_starting_weapons, self)
-
-
-# TODO: remove this once entity spawning is done correctly
-func _ready() -> void:
-	_current_movement_behaviour = movement_behaviour
 
 
 func init_current_stats()-> void:
@@ -70,10 +87,25 @@ func get_mov_rotation() -> float:
 	return _current_movement_behaviour.get_rotation()
 
 
-func take_damage(amount : int, hitbox : Hitbox = null) -> void:
+func take_damage(amount : int, hitbox : Hitbox = null) -> Array:
+	
+	var dmg_dealt = 0
+	var full_dmg_value = amount #actually want this to be affected by armour if the shot isn't piercing
+	
 	_current_stats.health = max(0, _current_stats.health - amount)
 	took_damage.emit(self, amount)
+	
+	dmg_dealt = clamp(full_dmg_value, 0, _current_stats.health)
+	
 	if _current_stats.health == 0:
+		if hitbox:
+			hitbox.killed_something(self)
 		die()
 	else:
 		health_updated.emit(_current_stats.health, _starting_stats.health)
+	
+	return [full_dmg_value, dmg_dealt]
+
+
+func on_hurt() -> void:
+	pass
