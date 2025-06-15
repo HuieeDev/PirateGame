@@ -16,3 +16,9 @@ texture = ExtResource("2_w0l1x")
 [node name="MovementBehaviour" parent="." index="4"]
 script = ExtResource("3_jsu4v")
 shipstats = ExtResource("4_ca7iv")
+
+[node name="Followers" parent="WeaponsContainer" index="0"]
+script = null
+
+[node name="Position1" parent="CannonPositions" index="0"]
+position = Vector2(0, 60)

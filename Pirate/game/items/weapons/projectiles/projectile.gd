@@ -15,7 +15,6 @@ var _to_be_destroyed := false
 var _to_be_recycled := false
 var _recycled := false
 
-
 @onready var _hitbox := $Hitbox
 @onready var _sprite := $Sprite2D
 @onready var _destroy_timer := $DestroyTimer
@@ -97,6 +96,13 @@ func disable_hitbox()->void :
 
 func enable_hitbox()->void :
 	_hitbox.enable()
+
+
+func set_hitbox_collision_data(collision : int, mask: int) ->void:
+	if not _hitbox == null: 
+		_hitbox.set_collision_data(collision, mask)
+	else:
+		ready.connect(set_hitbox_collision_data.bind(collision, mask))
 
 
 # if the entity that created this entity is killed, remove it. 

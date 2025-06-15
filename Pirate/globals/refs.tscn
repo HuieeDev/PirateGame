@@ -4,3 +4,7 @@
 
 [node name="Refs" type="Node"]
 script = ExtResource("1_0c1x8")
+player_projectile_layer = 32
+player_projectile_mask = 4
+enemy_projectile_layer = 64
+enemy_projectile_mask = 2

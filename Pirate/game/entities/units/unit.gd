@@ -23,14 +23,11 @@ var _current_rotation : float
 
 var _can_attack : bool = true
 
-var _player_ref : Node2D
 
-
-func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null, _entity_spawner_ref = null) -> void:
+func init(zone_min_pos:Vector2, zone_max_pos:Vector2, entity_spawner_ref = null) -> void:
 	
 	_current_movement_behaviour = movement_behaviour
 	
-	_player_ref = p_player_ref
 	
 	init_current_stats()
 	
@@ -38,8 +35,7 @@ func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null
 	
 	_hurtbox.area_entered.connect(_on_hurtbox_entered)
 	
-	super(zone_min_pos, zone_max_pos)
-
+	super(zone_min_pos, zone_max_pos, entity_spawner_ref)
 
 
 func _on_hurtbox_entered(hitbox : Area2D) -> void:
@@ -59,7 +55,7 @@ func _on_hurtbox_entered(hitbox : Area2D) -> void:
 
 
 func _setup_weapons() -> void:
-	_weapons_container.init(_starting_weapons, self)
+	_weapons_container.init(_starting_weapons, self, get_entity_type())
 
 
 func init_current_stats()-> void:

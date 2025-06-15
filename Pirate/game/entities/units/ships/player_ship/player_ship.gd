@@ -10,7 +10,7 @@ func init(zone_min_pos:Vector2, zone_max_pos:Vector2, p_player_ref:Node2D = null
 	
 	SignalBus.PlayerShipPickupRadiusChanged.emit(RunData.get_stat("pickup_range"))
 	
-	super(zone_min_pos, zone_max_pos, p_player_ref, _entity_spawner_ref)
+	super(zone_min_pos, zone_max_pos, _entity_spawner_ref)
 
 
 func _on_pickup_radius_area_entered(area: Area2D) -> void:
@@ -21,3 +21,7 @@ func _on_pickup_radius_area_entered(area: Area2D) -> void:
 func _on_pickup_radius_body_entered(body: Node2D) -> void:
 	# pull collectable towards player
 	pass # Replace with function body.
+
+
+func get_entity_type() -> int:
+	return EntityType.PLAYER

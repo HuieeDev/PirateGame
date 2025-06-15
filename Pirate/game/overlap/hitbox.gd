@@ -34,3 +34,8 @@ func enable() -> void:
 
 func disable() -> void:
 	_collision_shape.set_deferred("disabled", true)
+
+
+func set_collision_data(layer : int, mask : int) -> void:
+	collision_layer = layer
+	collision_mask = mask

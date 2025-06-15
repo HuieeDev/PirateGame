@@ -6,12 +6,13 @@ var _stats : ShipWeaponStats = null
 var _timer := 0.0
 
 var _parent : Unit
+var _parent_type : int
 
-func init(data : ShipWeaponData, parent) -> void:
-	
+func init(data : ShipWeaponData, parent, parent_type : int) -> void:
 	_reset_attack_timer()
 	_stats = data.stats
 	_parent = parent
+	_parent_type = parent_type
 
 
 func _reset_attack_timer() -> void:

@@ -6,9 +6,12 @@ class_name UnitWeaponsContainer
 var _all_weapons : Array[Weapon]
 
 var _parent : Unit
+var _parent_type : int
 
-func init(starting_weapons : Array[ShipWeaponData], parent) -> void:
+
+func init(starting_weapons : Array[ShipWeaponData], parent, parent_type : int) -> void:
 	_parent = parent
+	_parent_type = parent_type
 	for weapon in starting_weapons:
 		add_weapon(weapon)
 
@@ -23,7 +26,7 @@ func add_weapon(weapon_data : ShipWeaponData, slot = null) -> void:
 	elif weapon_data.type == Utils.ShipWeaponTypes.FOLLOWER:
 		_add_follower(weapon, weapon_data)
 	
-	weapon.init(weapon_data, _parent)
+	weapon.init(weapon_data, _parent, _parent_type)
 	_all_weapons.append(weapon)
 
 # this needs to be overriden by Ships
