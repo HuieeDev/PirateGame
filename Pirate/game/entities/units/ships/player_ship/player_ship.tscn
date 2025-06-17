@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://2sm4qyqsvy17"]
+[gd_scene load_steps=10 format=3 uid="uid://2sm4qyqsvy17"]
 
 [ext_resource type="PackedScene" uid="uid://gqf07kflihym" path="res://game/entities/units/ships/ship.tscn" id="1_g3jui"]
 [ext_resource type="Script" path="res://game/entities/units/ships/player_ship/player_ship.gd" id="2_0hl02"]
 [ext_resource type="Script" path="res://game/entities/units/movement_behaviours/player_ship_movement.gd" id="2_1xv67"]
+[ext_resource type="Script" path="res://game/items/weapons/ship_weapons/ship_weapon_data.gd" id="3_jw0hk"]
+[ext_resource type="Resource" uid="uid://bkyxatp0xfcct" path="res://game/items/weapons/ship_weapons/basic_cannon/basic_cannon_data.tres" id="4_7vhr1"]
 [ext_resource type="Script" path="res://game/entities/units/ships/player_ship/player_pickup_radius.gd" id="4_qduqr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ucec4"]
@@ -18,9 +20,17 @@ radius = 100.0
 
 [node name="PlayerShip" groups=["player"] instance=ExtResource("1_g3jui")]
 script = ExtResource("2_0hl02")
+_starting_weapons = Array[ExtResource("3_jw0hk")]([ExtResource("4_7vhr1")])
+
+[node name="Sprite2D" parent="Animation" index="0"]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_ucec4")
+
+[node name="Hurtbox" parent="." index="3"]
+collision_layer = 2
+collision_mask = 68
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource("CapsuleShape2D_k8ylk")
@@ -36,6 +46,10 @@ script = ExtResource("4_qduqr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRadius" index="0"]
 shape = SubResource("CircleShape2D_pec51")
 debug_color = Color(0.512508, 0.572442, 0.212313, 0.42)
+
+[node name="Position1" parent="CannonPositions" index="0"]
+position = Vector2(74, 0)
+rotation = -1.5708
 
 [connection signal="area_entered" from="PickupRadius" to="." method="_on_pickup_radius_area_entered"]
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]

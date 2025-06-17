@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://gqf07kflihym"]
+[gd_scene load_steps=6 format=3 uid="uid://gqf07kflihym"]
 
 [ext_resource type="PackedScene" uid="uid://cnadxofbg35vp" path="res://game/entities/units/Unit.tscn" id="1_muxss"]
 [ext_resource type="Script" path="res://game/entities/units/ships/ship.gd" id="2_x7mbh"]
 [ext_resource type="Resource" uid="uid://05wfvnxmqp7j" path="res://game/data/stats/ships/fallback_player_ship_stats.tres" id="3_00585"]
 [ext_resource type="Texture2D" uid="uid://bqqpexhdd5m15" path="res://assets/Kenney_Pirates/PNG/Retina/Ships/ship (1).png" id="4_eux3o"]
+[ext_resource type="Script" path="res://game/entities/units/ships/ship_weapons_container.gd" id="5_8temh"]
 
 [node name="Ship" instance=ExtResource("1_muxss")]
 script = ExtResource("2_x7mbh")
@@ -18,3 +19,13 @@ unique_name_in_owner = false
 
 [node name="Forward" type="Marker2D" parent="." index="5"]
 position = Vector2(0, 56)
+
+[node name="WeaponsContainer" parent="." index="6"]
+script = ExtResource("5_8temh")
+
+[node name="Cannons" type="Node2D" parent="WeaponsContainer" index="1"]
+
+[node name="CannonPositions" type="Node2D" parent="." index="7"]
+
+[node name="Position1" type="Node2D" parent="CannonPositions" index="0"]
+position = Vector2(21, 28)

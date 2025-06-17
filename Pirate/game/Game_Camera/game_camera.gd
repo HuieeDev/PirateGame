@@ -10,5 +10,5 @@ func _process(delta):
 
 
 func _try_move_to_player(delta: float):
-	if Global.player:
+	if not Global.player == null:
 		global_position = global_position.lerp(Global.player.global_position, 1.0 - exp(-delta * _lerp_speed))

@@ -19,6 +19,8 @@ var enemies : Array[Enemy] = []
 
 var _spawn_timer : Timer
 
+var _cleaning_up : bool = false
+
 func _ready() -> void:
 	_spawn_timer = Timer.new()
 	_spawn_timer.wait_time = time_between_spawns
@@ -31,16 +33,23 @@ func on_level_start():
 
 
 func clean_up() -> void:
-	for enemy in enemies:
-		enemy.die()
+	_cleaning_up = true
+	# for some reason, for enemy in enemies was always missing one out
+	for index in range(enemies.size() - 1, -1, -1):
+		#TODO: Pass _cleaning_up into the die() function of entities
+		enemies[index].die()
+		enemies.remove_at(index)
 	
 	Global.player.queue_free()
 	Global.player._can_move = false
 	Global.player = null
+	
+	_spawn_timer.stop()
 
 
 func _on_spawn_timer_timeout() -> void:
 	_spawn_enemy_offscreen(_enemy_scene)
+
 
 var SPAWN_RANGE = 100
 func _spawn_enemy_offscreen(enemy_scene: PackedScene) -> void:
@@ -70,5 +79,17 @@ func _spawn_entity(scene : PackedScene, pos : Vector2, is_player : bool = false,
 	if data:
 		entity.set_data(data)
 	
+	entity.ready.connect(_on_entity_ready.bind(entity))
+	
 	_entities_container.add_child(entity)
+	entity.died.connect(_entity_died)
 	return entity
+
+
+func _on_entity_ready(entity) -> void:
+	entity.init(Vector2(0,0), Vector2(0,0))
+
+
+func _entity_died(entity : Entity) -> void:
+	if entity.get_entity_type() == EntityType.ENEMY:
+		enemies.erase(entity)

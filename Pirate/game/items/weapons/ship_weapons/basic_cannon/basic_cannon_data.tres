@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShipWeaponData" load_steps=5 format=3 uid="uid://bkyxatp0xfcct"]
+
+[ext_resource type="Script" path="res://game/items/weapons/ship_weapons/ship_weapon_data.gd" id="1_38mkw"]
+[ext_resource type="Script" path="res://game/items/effect.gd" id="1_xvf5f"]
+[ext_resource type="Resource" uid="uid://c7ky8k43pekln" path="res://game/items/weapons/ship_weapons/basic_cannon/basic_cannon_stats.tres" id="2_5neov"]
+[ext_resource type="PackedScene" uid="uid://dp5lajhh7bxg5" path="res://game/items/weapons/ship_weapons/cannon.tscn" id="2_y7q8s"]
+
+[resource]
+script = ExtResource("1_38mkw")
+type = 0
+scene = ExtResource("2_y7q8s")
+stats = ExtResource("2_5neov")
+my_id = "basic_cannon"
+name = "Basic Cannon"
+unlocked_by_default = true
+tier = 0
+value = 1
+effects = Array[ExtResource("1_xvf5f")]([])
