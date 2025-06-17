@@ -19,6 +19,8 @@ var enemies : Array[Enemy] = []
 
 var _spawn_timer : Timer
 
+var _cleaning_up : bool = false
+
 func _ready() -> void:
 	_spawn_timer = Timer.new()
 	_spawn_timer.wait_time = time_between_spawns
@@ -31,8 +33,10 @@ func on_level_start():
 
 
 func clean_up() -> void:
+	_cleaning_up = true
 	# for some reason, for enemy in enemies was always missing one out
 	for index in range(enemies.size() - 1, -1, -1):
+		#TODO: Pass _cleaning_up into the die() function of entities
 		enemies[index].die()
 		enemies.remove_at(index)
 	
