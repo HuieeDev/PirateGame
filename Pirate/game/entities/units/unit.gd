@@ -28,7 +28,6 @@ func init(zone_min_pos:Vector2, zone_max_pos:Vector2, entity_spawner_ref = null)
 	
 	_current_movement_behaviour = movement_behaviour
 	
-	
 	init_current_stats()
 	
 	_setup_weapons()
@@ -88,10 +87,11 @@ func take_damage(amount : int, hitbox : Hitbox = null) -> Array:
 	var dmg_dealt = 0
 	var full_dmg_value = amount #actually want this to be affected by armour if the shot isn't piercing
 	
+	dmg_dealt = clamp(full_dmg_value, 0, _current_stats.health)
+	
 	_current_stats.health = max(0, _current_stats.health - amount)
 	took_damage.emit(self, amount)
 	
-	dmg_dealt = clamp(full_dmg_value, 0, _current_stats.health)
 	
 	if _current_stats.health == 0:
 		if hitbox:

@@ -11,6 +11,9 @@ static func glue(old: Signal, new : Signal, target_func : Callable) -> void:
 		new.connect(target_func)
 
 
+## Example use
+#@export var my_button : Button
+	#set(value): my_button = UIGlue.glue_pressed(my_button, value, _on_button_pressed)
 static func glue_pressed(old: Button, new : Button, target_func : Callable) -> Button:
 	glue(old.pressed, new.pressed, target_func)
 	return new
