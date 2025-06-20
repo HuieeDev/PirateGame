@@ -25,6 +25,7 @@ SceneChanger="*res://game/ui/SceneChanger.tscn"
 AudioManager="*res://audio/AudioManager.tscn"
 RunData="*res://globals/run_data.gd"
 Text="*res://globals/text.gd"
+ItemService="*res://game/logic/item_service.tscn"
 
 [input]
 

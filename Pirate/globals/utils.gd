@@ -16,3 +16,9 @@ enum ShipWeaponTypes
 
 
 #funcs
+static func get_random_element(array: Array):
+	return array[Utils.get_random_int(0, array.size() - 1)]
+
+
+static func get_random_int(min : int, max: int) -> int:
+	return randi_range(min, max)

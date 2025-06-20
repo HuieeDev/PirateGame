@@ -12,6 +12,9 @@ func _ready() -> void:
 	SignalBus.level_end.connect(_on_level_end)
 	SignalBus.exit_island.connect(_on_exit_island)
 	SignalBus.exit_map.connect(_on_exit_map)
+	
+	# TODO: move this to progress_data._ready()
+	RunData.reset()
 
 func _on_exit_island() -> void:
 	SignalBus.enter_map.emit()

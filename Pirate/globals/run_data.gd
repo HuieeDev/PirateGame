@@ -24,6 +24,7 @@ var items : Array
 var ship_appearances_displayed : Array
 var run_won : bool
 var live_stats : Dictionary
+var effects : Dictionary
 var challenges_completed_this_run := []
 #var reload_music = true
 #var current_character : CharacterData
@@ -41,6 +42,9 @@ func reset(restart:bool = false) -> void:
 	weapons = []
 	items = []
 	gold = 0
+	
+	
+	ItemService.init_unlocked_pool()
 
 # TODO: create character, ship and weapon stat resources. Pass through as params
 func add_character() -> void:

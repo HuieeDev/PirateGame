@@ -7,7 +7,7 @@
 script = ExtResource("1_osmkm")
 key = "crit_chance"
 text_key = "Crit Chance"
-value = 0
+value = 2
 custom_key = ""
 storage_method = 0
 effect_sign = 3
