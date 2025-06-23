@@ -41,8 +41,8 @@ func init_unlocked_pool() -> void:
 		_tiers_data[weapon.tier][TierData.WEAPONS].push_back(weapon)
 
 
-func get_shop_items(number_of_items : int = NB_SHOP_ITEMS, prev_items : Array = [], locked_items : Array = []) -> Array:
-	var new_items : Array = []
+func get_shop_items(number_of_items : int = NB_SHOP_ITEMS, prev_items : Array = [], locked_items : Array = []) -> Array[ItemParentData]:
+	var new_items : Array[ItemParentData] = []
 	var nb_weapons_guaranteed = 0
 	var nb_weapons_added = 0
 	#var guaranteed_items : Array = RunData.effects[""]
@@ -61,7 +61,7 @@ func get_shop_items(number_of_items : int = NB_SHOP_ITEMS, prev_items : Array = 
 	return new_items
 
 
-func _get_rand_item(type : TierData, excluded_items : Array = [], owned_items : Array[ItemParentData] = []) -> ItemParentData:
+func _get_rand_item(type : TierData, excluded_items : Array = [], owned_items : Array = []) -> ItemParentData:
 	var rand_wanted = randf()
 	
 	# TODO: once move Tier to its own class to make this nicer
@@ -75,8 +75,8 @@ func _get_rand_item(type : TierData, excluded_items : Array = [], owned_items : 
 	var items_to_remove : Array = []
 	
 	for shop_item in excluded_items:
-		pool.erase(shop_item[0])
-		backup_pool.erase(shop_item[0])
+		pool.erase(shop_item)
+		backup_pool.erase(shop_item)
 	
 	for item in owned_items:
 		if item.max_nb == 1:
