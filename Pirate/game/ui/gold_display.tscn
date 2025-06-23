@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0krnmpcajaau"]
+
+[ext_resource type="Texture2D" uid="uid://biqe15pdmqxx5" path="res://assets/Collectables/GoldNotGold.png" id="1_1cd2h"]
+[ext_resource type="Script" path="res://game/ui/gold_display.gd" id="1_hbicx"]
+
+[node name="GoldDisplay" type="HBoxContainer"]
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 45.0
+script = ExtResource("1_hbicx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_1cd2h")

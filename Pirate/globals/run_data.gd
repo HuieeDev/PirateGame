@@ -18,7 +18,8 @@ var current_level: = 0
 var current_xp: = 0.0
 var current_wave : int
 var current_difficulty : int
-var gold : int
+var gold : int:
+	set(value): value = SIGlue.int_clamped(value, 0, 999999, SignalBus.gold_changed)
 var weapons : Array
 var items : Array
 var ship_appearances_displayed : Array

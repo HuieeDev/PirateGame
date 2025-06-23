@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game/ui/island/shop_screen.gd" id="1_7bl46"]
 [ext_resource type="Script" path="res://game/ui/island/shop_item_slots.gd" id="2_23lkc"]
 [ext_resource type="PackedScene" uid="uid://bth4uslonvvd2" path="res://game/ui/island/shop_item_slot.tscn" id="3_1s4ck"]
-[ext_resource type="Texture2D" uid="uid://biqe15pdmqxx5" path="res://assets/Collectables/GoldNotGold.png" id="3_ko3fw"]
+[ext_resource type="PackedScene" uid="uid://b0krnmpcajaau" path="res://game/ui/gold_display.tscn" id="4_4wxnn"]
 
 [node name="ShopScreen" type="Control" node_paths=PackedStringArray("_item_slots_parent")]
 layout_mode = 3
@@ -44,20 +44,12 @@ layout_mode = 2
 [node name="ShopItemSlot4" parent="ShopItemsContainer" instance=ExtResource("3_1s4ck")]
 layout_mode = 2
 
-[node name="GoldDisplay" type="HBoxContainer" parent="."]
+[node name="GoldDisplay" parent="." instance=ExtResource("4_4wxnn")]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 5.0
-offset_right = 80.0
-offset_bottom = 45.0
-
-[node name="Label" type="Label" parent="GoldDisplay"]
-layout_mode = 2
-text = "99"
-
-[node name="TextureRect" type="TextureRect" parent="GoldDisplay"]
-layout_mode = 2
-texture = ExtResource("3_ko3fw")
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0

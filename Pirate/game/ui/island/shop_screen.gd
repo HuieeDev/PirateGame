@@ -16,6 +16,7 @@ func init() -> void:
 	_assign_shop_items()
 	initialised = true
 
+
 func _assign_shop_items() -> void:
 	# By default, we get 4 items
 	_shop_items = _get_shop_items()

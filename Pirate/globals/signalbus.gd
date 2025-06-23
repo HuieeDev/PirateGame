@@ -17,3 +17,6 @@ signal exit_island
 
 signal enter_map
 signal exit_map
+
+
+signal gold_changed(new_value)

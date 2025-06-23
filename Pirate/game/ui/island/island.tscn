@@ -47,10 +47,10 @@ text = "set_sail"
 
 [node name="IslandShop" parent="." instance=ExtResource("3_lw5h5")]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 203.0
-offset_right = 136.0
-offset_bottom = 267.0
+offset_left = 462.0
+offset_top = 275.0
+offset_right = 526.0
+offset_bottom = 339.0
 name_id = "tavern"
 
 [node name="ShopScreen" parent="." instance=ExtResource("4_rq6in")]
