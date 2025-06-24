@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://c17k62rhcyrv6"]
+
+[ext_resource type="Script" path="res://game/ui/debug/debug_ui.gd" id="1_pubrw"]
+[ext_resource type="PackedScene" uid="uid://b77uojnanpipq" path="res://game/ui/debug/stat_changer.tscn" id="2_j2sxl"]
+[ext_resource type="Script" path="res://game/ui/debug/stats_changer_container.gd" id="2_steaf"]
+[ext_resource type="Script" path="res://game/ui/debug/gold_panel.gd" id="4_yh0q3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x15gr"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 0.501961)
+
+[node name="Debug" type="CanvasLayer"]
+script = ExtResource("1_pubrw")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = 46.0
+offset_right = -65.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x15gr")
+
+[node name="Stats Changer Container" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 50.0
+offset_right = 1007.0
+offset_bottom = 488.0
+script = ExtResource("2_steaf")
+
+[node name="Health" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+layout_mode = 2
+_stat_name = "max_hp"
+
+[node name="ForwardSpeed" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+layout_mode = 2
+_stat_name = "forward_speed"
+
+[node name="TurningSpeed" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+layout_mode = 2
+_stat_name = "turning_speed"
+
+[node name="GoldPanel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 39.0
+offset_right = 358.0
+offset_bottom = 100.0
+script = ExtResource("4_yh0q3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/GoldPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="-100Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "-100"
+
+[node name="-50Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "-50"
+
+[node name="-10Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "-10"
+
+[node name="GoldAmountLabel" type="Label" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "Gold: 50"
+
+[node name="+10Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "+10"
+
+[node name="+50Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "+50"
+
+[node name="+100Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
+layout_mode = 2
+text = "+100"

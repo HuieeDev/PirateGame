@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci42dgo5asd38"]
+
+[ext_resource type="Script" path="res://globals/debug_service.gd" id="1_35j77"]
+
+[node name="DebugService" type="Node2D"]
+script = ExtResource("1_35j77")
