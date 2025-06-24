@@ -14,16 +14,18 @@ var current_living_enemies: = 0
 var resumed_from_state := false
 
 var num_of_waves := 5 # total number of waves in run (b4 endless or whateva)
-var current_level: = 0
-var current_xp: = 0.0
+var current_level: = 0 # TODO: remove this?
+var current_xp: = 0.0 # TODO: remove this?
 var current_wave : int
 var current_difficulty : int
-var gold : int
+var gold : int:
+	set(value): gold = SIGlue.int_clamped(value, 0, 999999, SignalBus.gold_changed)
 var weapons : Array
 var items : Array
 var ship_appearances_displayed : Array
 var run_won : bool
 var live_stats : Dictionary
+var effects : Dictionary
 var challenges_completed_this_run := []
 #var reload_music = true
 #var current_character : CharacterData
@@ -40,7 +42,10 @@ func _ready() -> void:
 func reset(restart:bool = false) -> void:
 	weapons = []
 	items = []
-	gold = 0
+	gold = 10
+	
+	
+	ItemService.init_unlocked_pool()
 
 # TODO: create character, ship and weapon stat resources. Pass through as params
 func add_character() -> void:

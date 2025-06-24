@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5h151q3b51jt"]
+
+[ext_resource type="Script" path="res://game/ui/island/shop_screen.gd" id="1_7bl46"]
+[ext_resource type="Script" path="res://game/ui/island/shop_item_slots.gd" id="2_23lkc"]
+[ext_resource type="PackedScene" uid="uid://bth4uslonvvd2" path="res://game/ui/island/shop_item_slot.tscn" id="3_1s4ck"]
+[ext_resource type="PackedScene" uid="uid://b0krnmpcajaau" path="res://game/ui/gold_display.tscn" id="4_4wxnn"]
+
+[node name="ShopScreen" type="Control" node_paths=PackedStringArray("_item_slots_parent")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bl46")
+_item_slots_parent = NodePath("ShopItemsContainer")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.309654, 0.323961, 0.191595, 1)
+
+[node name="ShopItemsContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 128.0
+offset_right = 952.0
+offset_bottom = 432.0
+script = ExtResource("2_23lkc")
+
+[node name="ShopItemSlot" parent="ShopItemsContainer" instance=ExtResource("3_1s4ck")]
+layout_mode = 2
+
+[node name="ShopItemSlot2" parent="ShopItemsContainer" instance=ExtResource("3_1s4ck")]
+layout_mode = 2
+
+[node name="ShopItemSlot3" parent="ShopItemsContainer" instance=ExtResource("3_1s4ck")]
+layout_mode = 2
+
+[node name="ShopItemSlot4" parent="ShopItemsContainer" instance=ExtResource("3_1s4ck")]
+layout_mode = 2
+
+[node name="GoldDisplay" parent="." instance=ExtResource("4_4wxnn")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 585.0
+offset_right = 103.0
+offset_bottom = 629.0
+text = "Exit"
+
+[connection signal="button_down" from="ExitButton" to="." method="_on_exit_button_button_down"]

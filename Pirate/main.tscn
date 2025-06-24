@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://do2a2nrjfm5d0"]
+[gd_scene load_steps=10 format=3 uid="uid://do2a2nrjfm5d0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dlucd"]
 [ext_resource type="PackedScene" uid="uid://dek52psod7q8n" path="res://game/level/level.tscn" id="2_04e01"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5t85ngto8mi" path="res://game/level/level_ui.tscn" id="5_siq5f"]
 [ext_resource type="PackedScene" uid="uid://buxdrj3s5ggsp" path="res://game/ui/island/island.tscn" id="6_f0p5s"]
 [ext_resource type="PackedScene" uid="uid://1ek16e4lm4un" path="res://game/ui/map/map.tscn" id="7_i53yj"]
+[ext_resource type="PackedScene" uid="uid://c17k62rhcyrv6" path="res://game/ui/debug/debug_ui.tscn" id="9_3chfj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dlucd")
@@ -31,3 +32,5 @@ visible = false
 
 [node name="Map" parent="UI" instance=ExtResource("7_i53yj")]
 visible = false
+
+[node name="Debug" parent="." instance=ExtResource("9_3chfj")]
