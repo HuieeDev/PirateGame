@@ -1,4 +1,4 @@
-extends ItemParentData
+extends ItemData
 class_name ShipWeaponData
 
 # Brotato had a weapon id on top of the id in itemparentdata. not sure why

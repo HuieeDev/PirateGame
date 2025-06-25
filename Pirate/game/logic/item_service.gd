@@ -1,6 +1,6 @@
 extends Node
 
-@export var weapons : Array[ShipWeaponData]
+@export var weapons : Array[ItemParentData]
 @export var items : Array[ItemParentData]
 @export var effects : Array[Effect]
 @export var consumables : Array[Resource]

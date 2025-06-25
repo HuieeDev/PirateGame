@@ -17,7 +17,7 @@ func _ready() -> void:
 	_plus_100.pressed.connect(_change_gold.bind(100))
 	
 	_update_label(RunData.gold)
-	SignalBus.gold_changed.connect(_update_label)
+	RunData.gold_changed.connect(_update_label)
 
 
 func _change_gold(amount : int) -> void:

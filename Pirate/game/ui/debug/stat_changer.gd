@@ -14,12 +14,15 @@ func _ready() -> void:
 	
 	_minus.pressed.connect(_minus_pressed)
 	_plus.pressed.connect(_plus_pressed)
+	
+	RunData.item_added.connect(_on_item_added)
+
 
 func _change_stat_by_amount(amount : int) -> void:
 	if not RunData.live_stats == null:
-		assert(_stat_name in RunData.live_stats)
+		assert(_stat_name in RunData.effects)
 		
-		RunData.live_stats[_stat_name] += amount
+		RunData.effects[_stat_name] += amount
 		
 		_update_value_display()
 
@@ -36,7 +39,11 @@ func on_debug_display() -> void:
 	_update_value_display()
 
 
+func _on_item_added(item) -> void:
+	_update_value_display()
+
+
 func _update_value_display() -> void:
-	if not RunData.live_stats == null:
-		assert(_stat_name in RunData.live_stats)
-		_value.text = str(RunData.get_stat(_stat_name))
+	if not RunData.effects == null:
+		assert(_stat_name in RunData.effects)
+		_value.text = str(Utils.get_stat(_stat_name))

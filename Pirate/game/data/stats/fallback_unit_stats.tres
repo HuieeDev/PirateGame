@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_k6eug")
 health = 1
+crit_chance = 0.0
