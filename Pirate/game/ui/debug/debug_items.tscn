@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://0khy2qj1b35s"]
+
+[ext_resource type="Script" path="res://game/ui/debug/debug_items.gd" id="1_sfpe3"]
+[ext_resource type="Script" path="res://game/ui/debug/debug_items_container.gd" id="2_m2irq"]
+
+[node name="DebugItems" type="Panel"]
+offset_left = 50.0
+offset_top = 135.0
+offset_right = 349.0
+offset_bottom = 519.0
+script = ExtResource("1_sfpe3")
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+offset_right = 298.0
+offset_bottom = 48.0
+text = "CATEGORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 41.0
+offset_right = 291.0
+offset_bottom = 94.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Current Item: UNSET"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "ADD"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 100.0
+offset_right = 293.0
+offset_bottom = 374.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+script = ExtResource("2_m2irq")

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c2jc3drmuoo41"]
+
+[node name="DebugSelectItemButton" type="Button"]
+custom_minimum_size = Vector2(0, 30)
+text = "ITEM_NAME"

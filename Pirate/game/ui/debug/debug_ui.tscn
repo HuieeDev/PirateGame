@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c17k62rhcyrv6"]
+[gd_scene load_steps=7 format=3 uid="uid://c17k62rhcyrv6"]
 
 [ext_resource type="Script" path="res://game/ui/debug/debug_ui.gd" id="1_pubrw"]
 [ext_resource type="PackedScene" uid="uid://b77uojnanpipq" path="res://game/ui/debug/stat_changer.tscn" id="2_j2sxl"]
 [ext_resource type="Script" path="res://game/ui/debug/stats_changer_container.gd" id="2_steaf"]
 [ext_resource type="Script" path="res://game/ui/debug/gold_panel.gd" id="4_yh0q3"]
+[ext_resource type="PackedScene" uid="uid://0khy2qj1b35s" path="res://game/ui/debug/debug_items.tscn" id="5_sa748"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x15gr"]
 bg_color = Color(0.190762, 0.190762, 0.190762, 0.501961)
@@ -86,3 +87,18 @@ text = "+50"
 [node name="+100Button" type="Button" parent="Panel/GoldPanel/HBoxContainer"]
 layout_mode = 2
 text = "+100"
+
+[node name="DebugItems" parent="Panel" instance=ExtResource("5_sa748")]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 140.0
+offset_right = 365.0
+offset_bottom = 524.0
+
+[node name="DebugWeapons" parent="Panel" instance=ExtResource("5_sa748")]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 140.0
+offset_right = 690.0
+offset_bottom = 524.0
+_var_name_in_item_service = "weapons"
