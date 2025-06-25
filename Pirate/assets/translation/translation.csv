@@ -1,7 +1,8 @@
 KEYS,en
-max_hp,Max HP
-forward_speed,Forward Speed
-turning_speed,Turning Speed
-pickup_range,Pickup Range
+stat_max_hp,Max HP
+stat_forward_speed,Forward Speed
+stat_turn_speed,Turning Speed
+stat_pickup_range,Pickup Range
+stat_crit_chance,Crit Chance
 tavern,Tavern
 set_sail,Set Sail

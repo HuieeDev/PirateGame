@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_mi17v"]
 script = ExtResource("1_osmkm")
-key = "crit_chance"
+key = "stat_crit_chance"
 text_key = "Crit Chance"
 value = 2
 custom_key = ""
@@ -15,7 +15,7 @@ custom_args = []
 
 [sub_resource type="Resource" id="Resource_slgw6"]
 script = ExtResource("1_osmkm")
-key = "turn_speed"
+key = "stat_turn_speed"
 text_key = "Turn Speed"
 value = -10
 custom_key = ""

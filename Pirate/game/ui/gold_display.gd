@@ -3,7 +3,7 @@ extends HBoxContainer
 @onready var _label : Label = $Label
 
 func _ready() -> void:
-	SignalBus.gold_changed.connect(_on_gold_changed)
+	RunData.gold_changed.connect(_on_gold_changed)
 
 
 func _on_gold_changed(amount) -> void:

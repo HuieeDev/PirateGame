@@ -28,5 +28,5 @@ func _on_item_selected(item_data : ItemParentData) -> void:
 
 
 func _add_current_item() -> void:
-	# TODO: need to get items working properly
-	pass
+	if not _current_item == null: 
+		RunData.add_item(_current_item)

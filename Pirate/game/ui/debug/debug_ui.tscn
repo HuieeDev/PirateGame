@@ -34,15 +34,23 @@ script = ExtResource("2_steaf")
 
 [node name="Health" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
 layout_mode = 2
-_stat_name = "max_hp"
+_stat_name = "stat_max_hp"
 
 [node name="ForwardSpeed" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
 layout_mode = 2
-_stat_name = "forward_speed"
+_stat_name = "stat_forward_speed"
 
-[node name="TurningSpeed" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+[node name="TurnSpeed" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
 layout_mode = 2
-_stat_name = "turning_speed"
+_stat_name = "stat_turn_speed"
+
+[node name="PickupRange" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+layout_mode = 2
+_stat_name = "stat_pickup_range"
+
+[node name="CritChance" parent="Panel/Stats Changer Container" instance=ExtResource("2_j2sxl")]
+layout_mode = 2
+_stat_name = "stat_crit_chance"
 
 [node name="GoldPanel" type="Panel" parent="Panel"]
 layout_mode = 0

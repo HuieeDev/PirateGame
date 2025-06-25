@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=2 format=3 uid="uid://g4yl2nt7v1tf"]
+
+[ext_resource type="Script" path="res://game/items/effect.gd" id="1_7vfp8"]
+
+[resource]
+script = ExtResource("1_7vfp8")
+key = "stat_forward_speed"
+text_key = ""
+value = 10
+custom_key = ""
+storage_method = 0
+effect_sign = 3
+custom_args = []

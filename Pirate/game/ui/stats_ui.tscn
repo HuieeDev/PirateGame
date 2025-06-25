@@ -35,16 +35,20 @@ grow_vertical = 2
 
 [node name="Health" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
 layout_mode = 2
-_stat_to_display = "max_hp"
+_stat_to_display = "stat_max_hp"
 
 [node name="ForwardSpeed" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
 layout_mode = 2
-_stat_to_display = "forward_speed"
+_stat_to_display = "stat_forward_speed"
 
 [node name="TurningSpeed" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
 layout_mode = 2
-_stat_to_display = "turning_speed"
+_stat_to_display = "stat_turn_speed"
 
 [node name="PickupRange" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
 layout_mode = 2
-_stat_to_display = "pickup_range"
+_stat_to_display = "stat_pickup_range"
+
+[node name="CritChance" parent="StatsDisplayContainer" instance=ExtResource("1_x73ga")]
+layout_mode = 2
+_stat_to_display = "stat_crit_chance"
