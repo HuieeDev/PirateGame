@@ -26,6 +26,7 @@ custom_args = []
 [resource]
 script = ExtResource("1_raka1")
 max_number = -1
+tags = []
 my_id = "hook"
 name = "Hook"
 unlocked_by_default = true

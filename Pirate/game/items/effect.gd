@@ -14,8 +14,10 @@ enum StorageMethod{SUM, KEY_VALUE, REPLACE}
 
 var _base_value := 0
 
+
 static func get_id() -> String:
 	return "effect"
+
 
 # apply the value of the effect to the run data stats
 func apply() -> void:
@@ -25,7 +27,9 @@ func apply() -> void:
 		_base_value = RunData.effects[key]
 		RunData.effects[key] = value
 	else:
+		# TODO: we want clamping here
 		RunData.effects[key] += value
+
 
 func unapply() -> void:
 	if custom_key != "" or storage_method == StorageMethod.KEY_VALUE:
@@ -34,6 +38,7 @@ func unapply() -> void:
 		RunData.effects[key] = _base_value
 	else:
 		RunData.effects[key] -= value
+
 
 func get_text() -> String:
 	var text = "Effect.get_text() not implemented"
